@@ -26,11 +26,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
 
-  User.prototype.validPassword = function(password) {
+  User.prototype.validPassword = function (password) {
     return bcrypt.compareSync(password, this.hashedPassword);
   };
 
-  User.prototype.bcrypt = function(password) {
+  User.prototype.bcrypt = function (password) {
     // authentication will take approximately 13 seconds
     // https://pthree.org/wp-content/uploads/2016/06/bcrypt.png
     const hashCost = 10;
@@ -39,6 +39,11 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   User.associate = models => {
+    User.hasMany(models.Game, {
+      foreignKey: "user_id",
+      field: "user_id",
+      onDelete: "CASCADE"
+    })
     // associations can be defined here
   };
   return User;

@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "ghadeer",
+    "username": "saraalyahya",
     "password": null,
-    "database": "database_development",
+    "database": "db_hajwalah",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "define": {

@@ -14,7 +14,7 @@ import auth from "./lib/passport_startegy"; // passport authentication middlewar
 // Import routes files
 import exampleRoutes from "./routes/example_routes";
 import userRoutes from "./routes/user_routes";
-
+import gameRoutes from "./routes/game_routes";
 // instantiate express application object
 const app = express();
 
@@ -40,7 +40,7 @@ app.use(cookieParser());
 // register route files
 app.use(exampleRoutes);
 app.use(userRoutes);
-
+app.use(gameRoutes);
 // register error handling middleware
 // note that this comes after the route middlewares, because it needs to be
 // passed any error messages from them
