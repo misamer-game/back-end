@@ -8,7 +8,8 @@ const router = express.Router();
 // post new game
 // post score for easy game
 router.post("/game", (req, res) => {
-    Game.create(req.body)
+    console.log("qazwsxedc ", req.body.data);
+    Game.create(req.body.data)
         .then(game => {
             res.status(201).json({ game: game });
         })
